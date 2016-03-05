@@ -28,11 +28,11 @@ switch ($debug_mode)
 		error_reporting(E_ALL ^ E_NOTICE);
 
 		define('HOSTNAME', 'localhost');
-		define('DATABASE', 'lm_exemplo');
+		define('DATABASE', 'aluno_ativo');
 		define('USERNAME', 'root');
-		define('PASSWORD',  '');
+		define('PASSWORD',  'teste123');
  		break;
- 	
+
  	// Online
  	case 'online':
 		$app_version = 1.0;
@@ -58,6 +58,7 @@ define('APP_HOST' 			, "http://{$_SERVER['SERVER_NAME']}");
 define('CURRENT_URL' 		, "http://{$_SERVER['SERVER_NAME']}{$_SERVER['REQUEST_URI']}");
 define('DOCUMENT_ROOT'  	, "{$_SERVER['DOCUMENT_ROOT']}");
 define('VIEW_TEMPLATES' 	, DOCUMENT_ROOT.'_views/_templates/');
+define('IMA_API_BASE_URL', 'http://api.ima.sp.gov.br/v1');
 
 
 ?>
