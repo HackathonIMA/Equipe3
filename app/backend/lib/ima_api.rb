@@ -10,13 +10,23 @@ class ImaApi
     @client_id = client_id
   end
 
-  def escolas(offset = 0, limit = 50)
-    self.class.get('/educacao', query: { offset: offset, limit: 20 },
-                                headers: { "client_id" => @client_id })
+  def escolas(offset = 0, limit = 50, filters = {}, fields = {})
+    self.class.get('/educacao', query: { offset: offset, limit: limit, filters: parse_filters(filters),  fields: parse_fields(fields) },
+                                headers: { "client_id" => @client_id }).parsed_response
   end
 
   def escola(id)
-    self.class.get("/educacao/#{id}", headers: { "client_id" => @client_id })
+    self.class.get("/educacao/#{id}", headers: { "client_id" => @client_id }).parsed_response
+  end
+
+  private
+
+  def parse_filters(filters = {})
+    filters.keys.inject('') {|old, key| old += "#{key.to_s}:#{filters[key]}"}
+  end
+
+  def parse_fields(fields = {})
+    fields.inject('') {|old, add| old += "#{add},"}.chomp(',')
   end
 
   # def timeline(which=:friends, options={})

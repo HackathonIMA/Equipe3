@@ -16,3 +16,17 @@ users = User.create([
                         address: 'No Barril'
                       }
                     ])
+
+
+ima = ImaApi.new('O4FK6qtxiu4m')
+i = 0
+limit = 100
+todas_escolas = []
+while true do
+  escolas = ima.escolas(i, 100)
+  break if escolas.length === 0
+  todas_escolas.concat escolas
+  # School.create(ima)
+  i += 1
+end
+p todas_escolas.length
