@@ -1,0 +1,11 @@
+<?=$this->template('header')?>
+
+
+
+<h1>Tem certeza que deseja excluir o Produto: <?php echo $data['nome'];?>?</h1>
+<a href="/produto/excluir/<?php echo $data['produto_id'];?>">Sim</a>
+<a href="/produto/lista">N&atilde;o</a>
+
+
+
+<?=$this->template('footer')?>
