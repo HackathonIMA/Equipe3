@@ -11,7 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160305214041) do
+ActiveRecord::Schema.define(version: 20160305220820) do
+
+  create_table "shares", force: :cascade do |t|
+    t.string   "title"
+    t.string   "description"
+    t.integer  "category"
+    t.integer  "school_id"
+    t.datetime "date"
+    t.string   "icon"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "shares", ["school_id"], name: "index_shares_on_school_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
