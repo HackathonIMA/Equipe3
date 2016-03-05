@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 
 class App
@@ -17,8 +17,8 @@ class App
 	{
 		// Default
 		//Setting the 1st page:
-		$this->controller_classname = 'PagesController';
-		$this->controller_filename 	= 'pages_controller';
+		// $this->controller_classname = 'PagesController';
+		// $this->controller_filename 	= 'pages_controller';
 		$this->controller_instance 	= null;
 		$this->method 				= 'index';
 
@@ -54,7 +54,7 @@ class App
 		require_once '_controller/'.$this->controller_filename.'.php';
 		$this->controller_instance = new $this->controller_classname;
 
-		
+
 		// Method_rest
 		if ($this->http_type == 'json')
 		{
@@ -95,20 +95,20 @@ class App
 			}
 		}
 
-		
+
 		// Params
 		$this->params = array();
 
 		if ($this->http_type == 'json' && is_array($url))
 		{
 			$output = array();
-			
+
 			for($i = 0; $i < count($url); $i = $i + 2)
 			{
 				$key 			= ($url[$i]) ? $url[$i] : 0;
 				$output[$key] 	= $url[$i + 1];
 			}
-			
+
 			if ($this->http_method == 'get')
 			{
 				$this->params = array($output);
@@ -125,15 +125,15 @@ class App
 
 
 		// Call
-		try 
+		try
 		{
 			$call_output = call_user_func_array(array($this->controller_instance, $this->method), $this->params);
-		} 
+		}
 		catch (Exception $e)
 		{
 			$call_output = $e->GetMessage();
 		}
-		
+
 
 		// Output
 		if ($this->http_type == 'json')
@@ -150,13 +150,13 @@ class App
 	public function parseUrl()
 	{
 		$url = $_GET['url'];
-		
+
 		if (isset($url))
 		{
 			$url = rtrim($url, '/');
 			$url = filter_var($url, FILTER_SANITIZE_URL);
 			$url = explode('/', $url);
-			
+
 			unset($_GET['url']);
 
 			return $url;
