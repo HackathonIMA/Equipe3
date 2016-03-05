@@ -1,0 +1,21 @@
+<?=$this->template('header')?>
+
+
+
+<h2><?=$data['aviso']?></h2>
+<form method="<?=$data['form_method']?>" action="<?=$data['form_action']?>" class="<?=$data['form_class']?>">
+	<h1><?=$data['form_titulo']?></h1>
+	<input type="hidden" name="produto_id" value="<?=$data['produto_id']?>" />
+	<select name="produto_categoria_id">
+		<option></option>
+		<?=$data['produto_categoria_options']?>
+	</select>
+	<input type="text" name="nome" placeholder="Nome" value="<?=$data['nome']?>" />
+	<input type="text" name="valor" placeholder="Valor" value="<?=$data['valor']?>" />
+	<textarea name="detalhes" placeholder="Detalhes"><?=$data['detalhes']?></textarea>
+	<button>Salvar</button>
+</form>
+
+
+
+<?=$this->template('footer')?>

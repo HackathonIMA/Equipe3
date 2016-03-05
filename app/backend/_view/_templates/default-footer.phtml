@@ -1,0 +1,51 @@
+
+
+
+	<!-- footer -->
+	<footer id="main-footer">
+		<div class="wrap">
+			<div class="sign left">
+				<a href="#"><img src="/assets/image/common/footer-logo.png" alt="" /></a>
+			</div>
+			<div class="lema right">
+				<a class="transition" href="#">Agência Digital LEMA</a>
+			</div>
+		</div>
+	</footer>
+
+
+
+	<!-- JS -->
+	<script src="/assets/js/jquery.min.js?<?=APP_VERSION?>"></script>
+	<script src="/assets/js/jquery-bxslider.min.js?<?=APP_VERSION?>"></script>
+	<script src="/assets/js/common.js?<?=APP_VERSION?>"></script>
+
+
+	<script type="text/javascript">
+
+	// redirect mobile
+	var ratio = window.devicePixelRatio || 1;
+	var w = screen.width; 
+	var screen_w = screen.width * ratio; 
+
+	// alert('ratio:'+ratio)
+	// alert('w:'+w)
+	// alert('screen_w:'+screen_w)
+	// 'width=320px, user-scalable=no, initial-scale=1'
+
+	// document.querySelectorAll('meta')[1].setAttribute('content', 'width='+w+'px, user-scalable=no, initial-scale=1')
+	
+	// document.querySelector('.header-photos').style.width = w+'px';
+	// document.querySelectorAll('.wrap').style.width = w+'px';
+	
+	// alert('ratio: '+ratio);
+	// alert($('.header-photos').width());
+	// alert($('.wrap:first').width());
+	// alert(w+'px');
+
+	// document.querySelectorAll('meta')[1].setAttribute('content', 'width=768px, user-scalable=no, initial-scale=1')
+	
+	</script>
+
+
+<?=$this->template('foot'); ?>
