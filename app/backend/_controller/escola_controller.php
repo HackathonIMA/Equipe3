@@ -11,6 +11,7 @@ class EscolaController extends Controller
 		// $this->view('pages/index', $data);
 		// $obj = $this->model("Escola");
 		// $obj->create($dados);
+		header('Content-Type: application/json');
 		$api = new ImaApiClient('O4FK6qtxiu4m');
 		return $api->list_escolas();
 	}
