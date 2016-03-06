@@ -43,12 +43,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         controller: 'LoginCtrl'
     })
 
-    .state('main', {
-        url: "/main",
-        templateUrl: "templates/mainFake.html",
-        controller: 'MainCtrl'
-    })
-
   // setup an abstract state for the tabs directive
     .state('tab', {
     url: '/tab',
