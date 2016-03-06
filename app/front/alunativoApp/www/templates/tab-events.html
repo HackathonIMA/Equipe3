@@ -4,15 +4,15 @@
     </ion-nav-buttons>
   <ion-content class="padding has-header events-background">
     <div class="card">
-      <div class="row">
+      <div class="row" ng-click="share()">
         <div class="image-megafone col col-25" >
           <img ng-src="img/megafone.png">
         </div>
           <div class="col-content">
-          <div class="megafone col">
-            <h3>Compartilhe</h3>
-            <h6>Pode acreditar...juntos somos fortes.</h6>
-          </div>
+            <div class="megafone col">
+                <h3>Compartilhe</h3>
+                <h6>Pode acreditar...juntos somos fortes.</h6>
+            </div>
         </div>
       </div>
      </div>
@@ -32,7 +32,7 @@
                 <div class="col">
                   <h2 class="title-event"><a href="#/tab/events/{{event.id}}">{{event.name}}</a></h2>
                   <p>{{event.lastText}}</p>
-                  <button class="button button-small button-assertive" ng-click="share()" ng-init="count=3">
+                  <button class="button button-small button-assertive" ng-click="count = count + 1" ng-init="count=3">
                     EU APOIO {{count}}
                   </button>
 
@@ -60,10 +60,10 @@
               <div class="col">
                 <h2 class="title-event"><a href="#/tab/events/{{event.id}}">{{event.name}}</a></h2>
                 <p>{{event.lastText}}</p>
-                <button class="button button-small button-assertive" ng-click="count = count + 1" ng-init="count=3">
+                <button class="button button-small button-balanced" ng-click="count = count + 1; apoiado = true;" ng-init="count=3">
                   EU APOIO {{count}}
                 </button>
-
+            
                 <div class="time-event">
                   <h2>{{event.date}}</h2>
                 </div>
