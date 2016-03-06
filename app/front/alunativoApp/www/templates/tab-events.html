@@ -8,12 +8,13 @@
         <div class="image-megafone col col-25" >
           <img ng-src="img/megafone.png">
         </div>
-
+          <div class="col-content">
           <div class="megafone col">
             <h3>Compartilhe</h3>
             <h6>Pode acreditar...juntos somos fortes.</h6>
           </div>
         </div>
+      </div>
      </div>
 
     <h4>Recentes</h4>
@@ -26,16 +27,18 @@
               <div class="col col-25">
                 <img ng-src="{{event.face}}">
               </div>
+              <div class="col-content">
 
-              <div class="col">
-                <h2 class="title-event"><a href="#/tab/events/{{event.id}}">{{event.name}}</a></h2>
-                <p>{{event.lastText}}</p>
-                <button class="button button-small button-assertive" ng-click="share()" ng-init="count=3">
-                  EU APOIO {{count}}
-                </button>
+                <div class="col">
+                  <h2 class="title-event"><a href="#/tab/events/{{event.id}}">{{event.name}}</a></h2>
+                  <p>{{event.lastText}}</p>
+                  <button class="button button-small button-assertive" ng-click="share()" ng-init="count=3">
+                    EU APOIO {{count}}
+                  </button>
 
-                <div class="time-event">
-                  <h2>{{event.date}}</h2>
+                  <div class="time-event">
+                    <h2>{{event.date}}</h2>
+                  </div>
                 </div>
               </div>
             </div>
@@ -52,25 +55,27 @@
                <img ng-src="{{event.face}}">
              </div>
 
-             <div class="col">
-               <h2 class="title-event"><a href="#/tab/events/{{event.id}}">{{event.name}}</a></h2>
-               <p>{{event.lastText}}</p>
-                <div class="row">
-                  <button class="button button-small button-assertive col col-50" ng-click="count = count + 1" ng-init="count=3">
-                    EU APOIO {{count}}
-                  </button>
 
-                  <div class="time-event col">
-                    <h2>{{event.date}}</h2>
-                  </div>
+            <div class="col-content">
+              <div class="col">
+                <h2 class="title-event"><a href="#/tab/events/{{event.id}}">{{event.name}}</a></h2>
+                <p>{{event.lastText}}</p>
+                <button class="button button-small button-assertive" ng-click="count = count + 1" ng-init="count=3">
+                  EU APOIO {{count}}
+                </button>
+
+                <div class="time-event">
+                  <h2>{{event.date}}</h2>
                 </div>
+              </div>
 
-             </div>
+            </div>
+
            </div>
          </div>
 
-
      </div>
+
      </div>
     </ion-item>
     <ion-list>
