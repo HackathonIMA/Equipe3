@@ -11,7 +11,11 @@ Rails.application.routes.draw do
        post 'report(.:format)' => 'shares#report'
     end
   end
-  resources :users
+  resources :users do
+    member do
+       post 'support/:share_id(.:format)' => 'users#support'
+    end
+  end
 
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 

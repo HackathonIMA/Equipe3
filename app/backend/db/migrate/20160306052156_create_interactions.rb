@@ -3,7 +3,7 @@ class CreateInteractions < ActiveRecord::Migration
     create_table :interactions do |t|
       t.references :user, null: false
       t.references :share, null: false
-      t.boolean :support, null: false
+      t.boolean :support, null: false, default: false
 
       t.timestamps null: false
     end

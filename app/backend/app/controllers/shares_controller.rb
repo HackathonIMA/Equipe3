@@ -3,6 +3,7 @@ class SharesController < ApplicationController
 
   # GET /shares
   # GET /shares.json
+  # GET /users/1/shares.json
   def index
     if params[:creation_date].present?
       @shares = Share.from_date Date.parse params[:creation_date]
@@ -13,6 +14,18 @@ class SharesController < ApplicationController
     @shares = @shares.where(user_id: params[:user_id].to_i) if params[:user_id].present?
     @shares = @shares.where(school_id: params[:school_id].to_i) if params[:school_id].present?
   end
+
+  # GET /users/1/shares/supporting.json
+  # def list_supporting
+  #   if params[:creation_date].present?
+  #     @shares = Share.from_date Date.parse params[:creation_date]
+  #   else
+  #     @shares = Share.active
+  #   end
+  #
+  #   @shares = @shares.where(user_id: params[:user_id].to_i) if params[:user_id].present?
+  #   @shares = @shares.where(school_id: params[:school_id].to_i) if params[:school_id].present?
+  # end
 
   # GET /shares/1
   # GET /shares/1.json
