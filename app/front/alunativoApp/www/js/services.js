@@ -1,4 +1,6 @@
-angular.module('starter.services', [])
+angular
+  .module('starter.services', [])
+  .constant("API_URL", "https://secure-journey-34689.herokuapp.com")
 
 .factory('Chats', function() {
   // Might use a resource here that returns a JSON array
@@ -49,12 +51,22 @@ angular.module('starter.services', [])
   };
 })
 
+.factory('Escolas', function(API_URL, $http) {
+  return {
+    all: function() {
+      return $http.get({
+        url: API_URL + "/schools.json"
+      });
+    }
+  }
+})
 
-.factory('Events', function() {
+
+.factory('Events', function(API_URL, $http) {
   // Might use a resource here that returns a JSON array
-
+  //
   // Some fake testing data
-  var events = [{
+  var fakeEvent = {
     id: 0,
     name: 'Mussum ipsum cacilds',
     lastText: 'EE Escola Municipal Tim Bernners Lee',
@@ -62,23 +74,55 @@ angular.module('starter.services', [])
     date: '3 segundos',
     face: 'img/tool.png',
     map: 'img/mapa.png'
-  }];
+  };
+
+  function $get(url) {
+    return $http({
+      url: API_URL + url,
+      transformResponse: appendTransform($http.defaults.transformResponse, function(value) {
+        return fixEvent(value);
+      })
+    });
+  }
+
+  function fixEvent(event) {
+    if (Array.isArray(event)) {
+      return event.map(fixEvent);
+    }
+
+    return Object.assign(event, fakeEvent, {
+      id: event.id,
+      name: event.title,
+      contentText: event.description,
+      // date: new Date()
+    });
+  }
 
   return {
     all: function() {
-      return events;
+      return $get("/shares.json");
     },
-    remove: function(event) {
-      events.splice(events.indexOf(event), 1);
+    today: function() {
+      return $get("/shares.json?created_at=" + new Date().toISOString());
     },
+    popular: function() {
+      return $get("/shares/popular.json");
+    },
+    // remove: function(event) {
+    //   events.splice(events.indexOf(event), 1);
+    // },
     get: function(eventId) {
-      for (var i = 0; i < events.length; i++) {
-        if (events[i].id === parseInt(eventId)) {
-          return events[i];
-        }
-      }
-      return null;
+      return $get("/shares/" + eventId + ".json");
     }
   };
 
 });
+
+function appendTransform(defaults, transform) {
+
+  // We can't guarantee that the default transformation is an array
+  defaults = angular.isArray(defaults) ? defaults : [defaults];
+
+  // Append the new transformation to the defaults
+  return defaults.concat(transform);
+}

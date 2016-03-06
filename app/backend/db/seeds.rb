@@ -19,26 +19,24 @@ begin
                         {
                           name: 'Chiquinha',
                           email: 'chiquinha@vila.com.mx',
-                          birthday: Date.new(1990, 12, 15),
+                          birthday: Date.new(1990, 02, 5),
                           address: 'Apartamento 42'
+                        },
+                        {
+                          name: 'Seu Madruga',
+                          email: 'seu.madruga@vila.com.mx',
+                          birthday: Date.new(1970, 08, 27),
+                          address: 'Apartamento 42'
+                        },
+                        {
+                          name: 'Professor Girafales',
+                          email: 'prof.girafales@escola.com.mx',
+                          birthday: Date.new(1968, 08, 27)
                         }
                       ])
 rescue
   puts "Error saving users... continuing"
 end
-
-# ima = ImaApi.new('O4FK6qtxiu4m')
-# i = 0
-# limit = 100
-# todas_escolas = []
-# while true do
-#   escolas = ima.escolas(i, 100)
-#   break if escolas.length === 0
-#   todas_escolas.concat escolas
-#   # School.create(ima)
-#   i += 1
-# end
-# p todas_escolas.length
 
 e_length = 50
 ima = ImaApi.new('O4FK6qtxiu4m')
@@ -47,4 +45,22 @@ e_length.times do |i|
   School.create([{
                   ima_id: ima_escolas[i]['id']
                 }])
+end
+
+begin
+  shares = Shares.create([{
+    title: "Desperdício de água do banheiro",
+    description: "Um cano está quebrado próximo à cantina.",
+    category: 1,
+    school_id: 5,
+    user_id: users[0].id
+    },{
+      title: "Reunião de pais e mestres",
+      description: "Na próxima semana teremos a reunião de pais.",
+      category: 2,
+      school_id: 7,
+      user_id: users[3].id
+      }])
+rescue
+  puts "Error saving events... continuing"
 end

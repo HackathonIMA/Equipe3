@@ -17,11 +17,11 @@
       </div>
      </div>
 
-    <h4>Recentes</h4>
+    <h4 ng-show="eventsRecentes.length">Recentes</h4>
 
     <ion-list>
 
-       <div class="list card " ng-repeat="event in events" type="item-text-wrap" href="#/tab/events/{{event.id}}">
+       <div class="list card " ng-repeat="event in eventsRecentes" type="item-text-wrap" href="#/tab/events/{{event.id}}">
           <div class="item">
             <div class="row">
               <div class="col col-25">
@@ -46,9 +46,9 @@
 
       </div>
 
-      <h4>Populares</h4>
+      <h4 ng-show="eventsPopulares.length">Populares</h4>
 
-      <div class="list card " ng-repeat="event in events" type="item-text-wrap" href="#/tab/events/{{event.id}}">
+      <div class="list card " ng-repeat="event in eventsPopulares" type="item-text-wrap" href="#/tab/events/{{event.id}}">
          <div class="item">
            <div class="row">
              <div class="col col-25">

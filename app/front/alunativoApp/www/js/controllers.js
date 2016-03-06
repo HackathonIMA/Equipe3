@@ -1,32 +1,29 @@
 angular.module('starter.controllers', [])
 
 .controller('InitCtrl', function($scope, $state) {
-    $scope.comecar = function () {
-        $state.go('tab.events');
-    };
+  $scope.comecar = function() {
+    $state.go('tab.events');
+  };
 
-    $scope.login = function () {
-        $state.go('login');
-    };
+  $scope.login = function() {
+    $state.go('login');
+  };
 })
 
 .controller('LoginCtrl', function($rootScope, $scope, $state) {
-    $scope.login = function () {
-        $rootScope.logged = true;
-        $state.go('tab.events');
-    };
+  $scope.login = function() {
+    $rootScope.logged = true;
+    $state.go('tab.events');
+  };
 
-<<<<<<< HEAD
-=======
-    $scope.userRegister = function () {
-        $state.go('tab.userRegister');
-    };
-    
->>>>>>> a23e635a03904fd722fce8273cf8db87e651715a
-     $scope.logout = function () {
-        $rootScope.logged = false;
-        $state.go('init');
-    };
+  $scope.userRegister = function() {
+    $state.go('tab.userRegister');
+  };
+
+  $scope.logout = function() {
+    $rootScope.logged = false;
+    $state.go('init');
+  };
 })
 
 .controller('EventsCtrl', function($rootScope, $scope, $state, Events) {
@@ -38,44 +35,52 @@ angular.module('starter.controllers', [])
   //$scope.$on('$ionicView.enter', function(e) {
   //});
 
-  $scope.events = Events.all();
+  Events.all().success(function(data) {
+    $scope.eventsRecentes = data;
+    console.log(data);
+  });
+
+  Events.popular().success(function(data) {
+
+    $scope.eventsPopulares = data;
+  });
+
   $scope.remove = function(events) {
     Events.remove(events);
   };
 
-   $scope.shareRegister = function() {
-        $state.go('tab.share');
-    };
-
-  $scope.userRegister = function () {
-        $state.go('tab.userRegister');
-    };
-
-  $scope.share = function() {
-    if ($rootScope.logged){
-        $scope.shareRegister();
-    } else {
-        $scope.userRegister();
-    }
+  $scope.shareRegister = function() {
+    $state.go('tab.share');
   };
 
+  $scope.userRegister = function() {
+    $state.go('tab.userRegister');
+  };
+
+  $scope.share = function() {
+    if ($rootScope.logged) {
+      $scope.shareRegister();
+    } else {
+      $scope.userRegister();
+    }
+  };
 })
 
 .controller('EventDetailCtrl', function($scope, $stateParams, Events) {
-  $scope.event = Events.get($stateParams.eventId);
+  Events.get($stateParams.eventId).success(function(data) {
+    $scope.event = data;
+  });
 })
 
 .controller('UserRegisterCtrl', function($rootScope, $scope, $state) {
-     $scope.userRegister = function () {
-        $rootScope.logged = true;
-        $state.go('tab.events');
-    };
+  $scope.userRegister = function() {
+    $rootScope.logged = true;
+    $state.go('tab.events');
+  };
 })
 
 .controller('ShareCtrl', function($scope, $state) {
-     $scope.shareRegister = function () {
-        $state.go('tab.events');
-    };
-})
-
-;
+  $scope.shareRegister = function() {
+    $state.go('tab.events');
+  };
+});
