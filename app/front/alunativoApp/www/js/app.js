@@ -36,13 +36,13 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         templateUrl: "templates/init.html",
         controller: 'InitCtrl'
     })
-    
+
     .state('login', {
         url: "/login",
         templateUrl: "templates/login.html",
         controller: 'LoginCtrl'
     })
-    
+
     .state('main', {
         url: "/main",
         templateUrl: "templates/mainFake.html",
@@ -64,6 +64,26 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       'tab-dash': {
         templateUrl: 'templates/tab-dash.html',
         controller: 'DashCtrl'
+      }
+    }
+  })
+
+  .state('tab.events', {
+    url: '/events',
+    views: {
+      'tab-events': {
+        templateUrl: 'templates/tab-events.html',
+        controller: 'EventsCtrl'
+      }
+    }
+  })
+
+  .state('tab.event-detail', {
+    url: '/events/:eventId',
+    views: {
+      'tab-events': {
+        templateUrl: 'templates/event-datail.html',
+        controller: 'EventDetailCtrl'
       }
     }
   })

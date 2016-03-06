@@ -1,0 +1,24 @@
+.image-megafone {
+  float: left;
+}
+.megafone {
+  float: right;
+  width: 250px;
+}
+
+.time-event{
+  float:right;
+  margin-top: 9px;
+  color: grey;
+  margin-right: 82px;
+}
+
+.content-event a{
+  text-decoration: none;
+  color: grey;
+}
+
+.title-event a{
+  text-decoration: none;
+  color: black;
+}
