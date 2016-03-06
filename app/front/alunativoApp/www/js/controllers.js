@@ -17,14 +17,13 @@ angular.module('starter.controllers', [])
         console.log($rootScope);
     };
 
-<<<<<<< HEAD
-=======
+
     $scope.userRegister = function () {
         $state.go('tab.userRegister');
     };
     
->>>>>>> a23e635a03904fd722fce8273cf8db87e651715a
-     $scope.logout = function () {
+
+    $scope.logout = function () {
         $rootScope.logged = false;
         $state.go('init');
     };
