@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
   resources :schools, shallow: true do
     resources :shares
-    resources :users do
+    resources :users, shallow: true do
       resources :shares
     end
   end
+  resources :shares
   resources :users
   # resources :shares
 
