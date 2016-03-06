@@ -51,7 +51,7 @@ angular
   };
 })
 
-.factory('Escolas', function(API_URL, $http) {
+.factory('Escolas', function(API_URL, $http, $q) {
 
   function $get(url) {
     return $http({
@@ -61,6 +61,9 @@ angular
 
   return {
     all: function() {
+      return $get("/schools.json");
+    },
+    byEvent: function(event) {
       return $get("/schools.json");
     }
   }

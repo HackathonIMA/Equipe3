@@ -33,13 +33,13 @@ angular.module('starter.controllers', [])
   // listen for the $ionicView.enter event:
   //
   $scope.$on('$ionicView.enter', function(e) {
-      Events.all().success(function(data) {
-        $scope.eventsRecentes = data;
-      });
+    Events.all().success(function(data) {
+      $scope.eventsRecentes = data;
+    });
 
-      Events.popular().success(function(data) {
-        $scope.eventsPopulares = data;
-      });
+    Events.popular().success(function(data) {
+      $scope.eventsPopulares = data;
+    });
   });
 
   $scope.remove = function(events) {
@@ -63,9 +63,13 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('EventDetailCtrl', function($scope, $stateParams, Events) {
+.controller('EventDetailCtrl', function($scope, $stateParams, Events, Escolas) {
   Events.get($stateParams.eventId).success(function(data) {
     $scope.event = data;
+
+    // Escolas.byEvent($scope.event).success(function(data) {
+    //   $scope.event.school = data;
+    // });
   });
 })
 
@@ -74,7 +78,7 @@ angular.module('starter.controllers', [])
     Escolas.all().success(function(data) {
       $scope.escolas = data;
     })
-});;
+  });
 
   $scope.userRegister = function() {
     $rootScope.logged = true;
