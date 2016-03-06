@@ -23,7 +23,11 @@
 
 .card img{
     width: 100%;
-    padding: 0 !important;
+
+}
+
+.col-content {
+  margin-left: 15px;
 }
 
 
