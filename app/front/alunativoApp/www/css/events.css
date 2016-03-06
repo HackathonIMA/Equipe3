@@ -30,3 +30,10 @@
 .events-background {
      background-color: #ddd;
 }
+
+.title.title-left.header-item {
+  position: relative;
+  top:-6px !important;
+  left:0 !important;
+  margin:0 !important;
+}
