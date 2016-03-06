@@ -14,9 +14,14 @@ users = User.create([
                         email: 'chaves@vila.com.mx',
                         birthday: Time.new(1988, 12, 15),
                         address: 'No Barril'
+                      },
+                      {
+                        name: 'Chiquinha',
+                        email: 'chiquinha@vila.com.mx',
+                        birthday: Date.new(1990, 12, 15),
+                        address: 'Apartamento 42'
                       }
                     ])
-
 
 # ima = ImaApi.new('O4FK6qtxiu4m')
 # i = 0
@@ -31,10 +36,11 @@ users = User.create([
 # end
 # p todas_escolas.length
 
+e_length = 50
 ima = ImaApi.new('O4FK6qtxiu4m')
-ima_escolas = ima.escolas(0, 5)
-5.times do |i|
+ima_escolas = ima.escolas(0, e_length)
+e_length.times do |i|
   School.create([{
-    ima_id: ima_escolas[i]['id']
-  }])
+                  ima_id: ima_escolas[i]['id']
+                }])
 end

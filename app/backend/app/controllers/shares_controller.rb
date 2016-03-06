@@ -4,7 +4,14 @@ class SharesController < ApplicationController
   # GET /shares
   # GET /shares.json
   def index
-    @shares = Share.all
+    if params[:creation_date].present?
+      @shares = Share.from_date Date.parse params[:creation_date]
+    else
+      @shares = Share.all
+    end
+
+    @shares = @shares.where(user_id: params[:user_id].to_i) if params[:user_id].present?
+    @shares = @shares.where(school_id: params[:school_id].to_i) if params[:school_id].present?
   end
 
   # GET /shares/1
@@ -25,6 +32,7 @@ class SharesController < ApplicationController
   # POST /shares.json
   def create
     @share = Share.new(share_params)
+    @share.user_id = params[:user_id].to_i if params[:user_id].present?
 
     respond_to do |format|
       if @share.save
@@ -69,6 +77,6 @@ class SharesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def share_params
-      params.require(:share).permit(:title, :description, :category, :school_id, :date, :icon)
+      params.require(:share).permit(:title, :description, :category, :school_id, :user_id, :date, :icon)
     end
 end

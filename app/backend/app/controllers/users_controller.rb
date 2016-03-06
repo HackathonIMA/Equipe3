@@ -4,8 +4,6 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    # ima = ImaApi.new('O4FK6qtxiu4m')
-    # p ima.escolas
     @users = User.all
   end
 
