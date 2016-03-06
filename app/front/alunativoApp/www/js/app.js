@@ -47,15 +47,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     .state('tab', {
     url: '/tab',
     abstract: true,
-    templateUrl: 'templates/tabs.html'
-  })
+    templateUrl: 'templates/menu.html'
+    })
 
   // Each tab has its own nav history stack:
 
   .state('tab.dash', {
     url: '/dash',
     views: {
-      'tab-dash': {
+      'menuContent': {
         templateUrl: 'templates/tab-dash.html',
         controller: 'DashCtrl'
       }
@@ -65,7 +65,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   .state('tab.events', {
     url: '/events',
     views: {
-      'tab-events': {
+      'menuContent': {
         templateUrl: 'templates/tab-events.html',
         controller: 'EventsCtrl'
       }
@@ -75,7 +75,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   .state('tab.event-detail', {
     url: '/events/:eventId',
     views: {
-      'tab-events': {
+      'menuContent': {
         templateUrl: 'templates/event-datail.html',
         controller: 'EventDetailCtrl'
       }
@@ -85,7 +85,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   .state('tab.chats', {
       url: '/chats',
       views: {
-        'tab-chats': {
+        'menuContent': {
           templateUrl: 'templates/tab-chats.html',
           controller: 'ChatsCtrl'
         }
@@ -94,7 +94,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     .state('tab.chat-detail', {
       url: '/chats/:chatId',
       views: {
-        'tab-chats': {
+        'menuContent': {
           templateUrl: 'templates/chat-detail.html',
           controller: 'ChatDetailCtrl'
         }
@@ -104,7 +104,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   .state('tab.account', {
     url: '/account',
     views: {
-      'tab-account': {
+      'menuContent': {
         templateUrl: 'templates/tab-account.html',
         controller: 'AccountCtrl'
       }
@@ -112,6 +112,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/init');
+  $urlRouterProvider.otherwise('/tab/events');
 
 });

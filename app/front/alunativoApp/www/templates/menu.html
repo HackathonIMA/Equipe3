@@ -1,0 +1,40 @@
+<ion-side-menus>
+
+  <ion-side-menu-content>
+    <ion-nav-bar class="bar-assertive nav-title-slide-ios7">
+      <ion-nav-back-button class="button-clear"><i class="icon ion-android-arrow-back"></i> VOLTAR</ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-nav-view name="menuContent" animation="slide-left-right"></ion-nav-view>
+  </ion-side-menu-content>
+
+  <ion-side-menu side="left">
+    <header class="bar bar-header bar-assertive">
+      <h1 class="title"></h1>
+    </header>
+    <ion-content class="has-header">
+      <ion-list>
+        <ion-item ng-if="!logged" menu-close ng-controller="InitCtrl" ng-click="login()">
+          Login
+        </ion-item>
+        <ion-item ng-if="logged" menu-close>
+          Meu cadastro
+        </ion-item>
+        <ion-item ng-if="logged" menu-close>
+          Contribuições
+        </ion-item>
+        <ion-item ng-if="logged" menu-close>
+          De hoje
+        </ion-item>
+        <ion-item ng-if="logged" menu-close>
+          Populares
+        </ion-item>
+        <ion-item menu-close >
+          Sobre
+        </ion-item>
+        <ion-item menu-close ng-controller="LoginCtrl" ng-click="logout()">
+          Sair
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>

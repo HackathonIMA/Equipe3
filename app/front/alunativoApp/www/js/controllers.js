@@ -10,9 +10,15 @@ angular.module('starter.controllers', [])
     };
 })
 
-.controller('LoginCtrl', function($scope, $state) {
+.controller('LoginCtrl', function($rootScope, $scope, $state) {
     $scope.login = function () {
+        $rootScope.logged = true;
         $state.go('tab.events');
+    };
+    
+     $scope.logout = function () {
+        $rootScope.logged = false;
+        $state.go('init');
     };
 })
 
