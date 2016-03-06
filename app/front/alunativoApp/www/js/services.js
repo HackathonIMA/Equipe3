@@ -51,7 +51,7 @@ angular
   };
 })
 
-.factory('Escolas', function(API_URL, $http) {
+.factory('Escolas', function(API_URL, $http, $q) {
 
   function $get(url) {
     return $http({
@@ -61,6 +61,9 @@ angular
 
   return {
     all: function() {
+      return $get("/schools.json");
+    },
+    byEvent: function(event) {
       return $get("/schools.json");
     }
   }
@@ -99,7 +102,7 @@ angular
       id: event.id,
       name: event.title,
       contentText: event.description,
-      // date: new Date()
+      date: "25 minutos"
     });
   }
 
@@ -111,7 +114,35 @@ angular
       return $get("/shares.json?created_at=" + new Date().toISOString());
     },
     popular: function() {
-      return $get("/shares/popular.json");
+
+        var user_cb = null;
+        function sc(fn) {
+          user_cb = fn;
+          setTimeout(function() {
+            if (user_cb) {
+              user_cb([
+                Object.assign({}, fakeEvent, {
+                  "id": 2,
+                  "name": "Quadra Fechada",
+                  "school_id": 49,
+                  "description": "A quadra está lá mas nunca é utilizada",
+                  "date": "2 dias"
+                }),
+                Object.assign({}, fakeEvent, {
+                  "id": 2,
+                  "name": "Bullying no Intervalo",
+                  "school_id": 49,
+                  "description": "A quadra está lá mas nunca é utilizada",
+                  "date": "5 dias"
+                })
+              ]);
+            }
+          }, 500);
+        }
+
+    return {
+      success: sc
+    }
     },
     // remove: function(event) {
     //   events.splice(events.indexOf(event), 1);

@@ -48,7 +48,7 @@ if School.all.length <= e_length
 end
 
 begin
-  shares = Shares.create([{
+  shares = Share.create([{
     title: "Desperdício de água do banheiro",
     description: "Um cano está quebrado próximo à cantina.",
     category: 1,
