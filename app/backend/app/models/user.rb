@@ -9,4 +9,9 @@ class User < ActiveRecord::Base
     interaction.support = !interaction.support
     interaction.save()
   end
+
+  def as_json(options = {})
+    # options.merge!(:include => { :school => self.school })
+    super({  }.merge(options || {}))
+  end
 end
