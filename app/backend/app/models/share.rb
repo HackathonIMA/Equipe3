@@ -2,6 +2,7 @@ class Share < ActiveRecord::Base
   belongs_to :user
   belongs_to :school
   has_many :interactions
+  has_many :supporters, through: :interactions, source: :user
 
   scope :active, -> {where active: true}
 
@@ -13,6 +14,10 @@ class Share < ActiveRecord::Base
 
   def Share.from_date(date)
     Share.active.where("created_at >= ?", date.to_time.beginning_of_day)
+  end
+
+  def supporters_count
+    self.interactions.where(support: true).count
   end
 
   def as_json(options = {})

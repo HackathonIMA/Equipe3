@@ -49,3 +49,5 @@ gem 'httparty'
 gem "pg" do
  options("-- --with-pg-lib /usr/lib")
 end
+
+gem 'rack-cors', :require => 'rack/cors'
