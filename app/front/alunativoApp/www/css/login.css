@@ -1,5 +1,5 @@
-#main{
-    padding: 15px;
+#main {
+    height: calc(100% - 72px);
 }
 
 #main label.item {
@@ -34,6 +34,11 @@
     background-color: #ddd;
 }
 
-.card {
-    padding: 15px;
+.content-header {
+    line-height: 72px;
+}
+
+.content-header .button-icon i.icon:before{
+    font-size: 24px;
+    margin: 0 8px 0 15px;
 }
