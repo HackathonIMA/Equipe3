@@ -14,6 +14,7 @@ angular.module('starter.controllers', [])
     $scope.login = function () {
         $rootScope.logged = true;
         $state.go('tab.events');
+        console.log($rootScope);
     };
 
     $scope.userRegister = function () {
