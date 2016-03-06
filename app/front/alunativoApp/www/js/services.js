@@ -1,6 +1,6 @@
 angular
   .module('starter.services', [])
-  .constant("API_URL", "https://secure-journey-34689.herokuapp.com")
+  .constant("API_URL", "https://shrouded-meadow-57530.herokuapp.com")
 
 .factory('Chats', function() {
   // Might use a resource here that returns a JSON array
