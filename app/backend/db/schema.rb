@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160306003731) do
+ActiveRecord::Schema.define(version: 20160306052156) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "interactions", force: :cascade do |t|
+    t.integer  "user_id",    null: false
+    t.integer  "share_id",   null: false
+    t.boolean  "support",    null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "schools", force: :cascade do |t|
     t.string   "ima_id"
@@ -22,19 +33,20 @@ ActiveRecord::Schema.define(version: 20160306003731) do
   end
 
   create_table "shares", force: :cascade do |t|
-    t.string   "title",       null: false
+    t.string   "title",                      null: false
     t.string   "description"
-    t.integer  "category",    null: false
-    t.integer  "school_id"
+    t.integer  "category",                   null: false
+    t.integer  "school_id",                  null: false
+    t.integer  "user_id",                    null: false
     t.datetime "date"
     t.string   "icon"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.integer  "user_id"
+    t.boolean  "active",      default: true, null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
-  add_index "shares", ["school_id"], name: "index_shares_on_school_id"
-  add_index "shares", ["user_id"], name: "index_shares_on_user_id"
+  add_index "shares", ["school_id"], name: "index_shares_on_school_id", using: :btree
+  add_index "shares", ["user_id"], name: "index_shares_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "name",       null: false
@@ -45,6 +57,8 @@ ActiveRecord::Schema.define(version: 20160306003731) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
 
+  add_foreign_key "shares", "schools"
+  add_foreign_key "shares", "users"
 end

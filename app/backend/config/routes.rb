@@ -1,13 +1,25 @@
 Rails.application.routes.draw do
+
+  ID_RULE = /[A-Z][A-Z][0-9]+/
+
+  resources :users do
+    member do
+       post 'support/:share_id(.:format)' => 'users#support'
+    end
+  end
+
+  resources :interactions, constraints: { id: ID_RULE }
   resources :schools, shallow: true do
     resources :shares
     resources :users, shallow: true do
       resources :shares
     end
   end
-  resources :shares
-  resources :users
-  # resources :shares
+  resources :shares do
+    member do
+       post 'report(.:format)' => 'shares#report'
+    end
+  end
 
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
