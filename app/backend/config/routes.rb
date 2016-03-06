@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   ID_RULE = /[A-Z][A-Z][0-9]+/
 
+  get '/shares/popular' => 'shares#list_popular'
+
   resources :users do
     member do
        post 'support/:share_id(.:format)' => 'users#support'
@@ -15,7 +17,7 @@ Rails.application.routes.draw do
       resources :shares
     end
   end
-  resources :shares do
+  resources :shares, constraints: { id: ID_RULE } do
     member do
        post 'report(.:format)' => 'shares#report'
     end

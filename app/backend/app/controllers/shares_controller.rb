@@ -21,6 +21,10 @@ class SharesController < ApplicationController
     end
   end
 
+  def list_popular
+    render :json => Share.popular.first(5).as_json
+  end
+
   # GET /shares/1
   # GET /shares/1.json
   def show
@@ -94,7 +98,7 @@ class SharesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_share
-      @share = Share.active.find(params[:id])
+      @share = Share.active.find(params[:id]) unless params[:id].is_a? String
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

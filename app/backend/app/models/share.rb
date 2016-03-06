@@ -20,6 +20,10 @@ class Share < ActiveRecord::Base
     self.interactions.where(support: true).count
   end
 
+  def Share.popular
+    Share.joins(:interactions).group("shares.id").order("count(shares.id) DESC")
+  end
+
   def as_json(options = {})
     # options.merge!(:include => { :school => self.school })
     super({  }.merge(options || {}))
