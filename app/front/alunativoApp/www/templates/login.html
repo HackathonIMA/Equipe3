@@ -1,21 +1,29 @@
 <ion-view  hide-nav-bar="true">
-    <ion-content>
+    <ion-content class="login-blackground">
         <div class="row">
             <button ng-click="$ionicGoBack()" class="button button-icon icon icon-back-icon back-button">VOLTAR</button>
         </div>
         <div id="main">
-            <div>
-                <label class="item item-input item-floating-label ">
-                    <span class="input-label">Nome do Usuário</span>
-                    <input type="text" placeholder="Nome do Usuário">
-                </label>
-                <label class="item item-input item-floating-label ">
-                    <span class="input-label">Senha</span>
-                    <input type="password" placeholder="Senha">
-                </label>
+            <div class="card">
+                <div class="item item-text-wrap">
+                    <label class="item item-input item-floating-label ">
+                        <span class="input-label">Nome do Usuário</span>
+                        <input type="text" placeholder="Nome do Usuário">
+                    </label>
+                    <label class="item item-input item-floating-label ">
+                        <span class="input-label">Senha</span>
+                        <input type="password" placeholder="Senha">
+                    </label>
+                    <div class="row">
+                        <div class="col col-50">
+                            <button class="button button-positive btn-default" ng-click="login()">ENTRAR</button>
+                        </div>
+                        <div class="col">
+                            <button class="button btn-default transparent" ng-click="$ionicGoBack()">CANCELAR</button>        
+                        </div>
+                    </div>
+                </div>
             </div>
-            <button class="button button-positive btn-default" ng-click="login()">ENTRAR</button>
-            <button class="button btn-default transparent" ng-click="$ionicGoBack()">CANCELAR</button>
         </div>
     </ion-content>
 </ion-view>
