@@ -1,5 +1,6 @@
 #main {
     height: calc(100% - 72px);
+    background-color: #DDD;
 }
 
 #main label.item {
@@ -21,7 +22,8 @@
 
 .btn-default {
     margin-top: 35px;
-    padding: 0px 30px;
+    padding: 0px;
+    width:100%;
 }
 
 .btn-default.transparent {
@@ -36,7 +38,9 @@
 }
 
 .content-header {
+    height: 72px;
     line-height: 72px;
+    background-color: #DDD;
 }
 
 .content-header .button-icon i.icon:before{

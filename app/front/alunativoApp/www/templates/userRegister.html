@@ -1,77 +1,59 @@
-<ion-view hide-nav-bar="false" >
+<ion-view hide-nav-bar="true" >
     <ion-content class="login-blackground">
-        <!-- <div class="row content-header">
+        <div class="row content-header">
             <button ng-click="$ionicGoBack()" class="button button-icon icon icon-back-icon back-button">
                 <i class="icon ion-android-arrow-back"></i>
                 <span class="back-text">VOLTAR</span>
             </button>
-        </div> -->
+        </div>
         <div id="main" class="row row-center">
             <div class="card">
                 <h1>Cadastre-se</h1>
-                <div class="item item-text-wrap">
 
-                    <div class="row">
-                        <div class="col">
-                            <label class="item item-input item-floating-label ">
-                                <span class="input-label">Nome completo</span>
-                                <input type="text" placeholder="Nome completo">
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col col-50">
-                            <label class="item item-input">
-                                <span class="input-label">Data</span>
-                                <input type="date">
-                            </label>
-                        </div>
-                        <div class="col">
-                            <label class="item item-input item-select">
-                                <div class="input-label">
-                                Sexo
-                                </div>
-                                <select>
-                                <option>Masculino</option>
-                                <option>Feminino</option>
-                                </select>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col">
-                            <label class="item item-input item-floating-label ">
-                                <span class="input-label">Email</span>
-                                <input type="text" placeholder="Email">
-                            </label>
-                        </div>
-                    </div>
-
-                     <div class="row">
-                        <div class="col">
-                            <ion-list>
-                                <ion-checkbox ng-model="isAluno">Sou aluno</ion-checkbox>
-                            </ion-list>
-                        </div>
-                    </div>
-
-                    <label ng-if="isAluno" class="item item-input item-select">
-                        <div class="input-label">
-                        Escola
-                        </div>
-                        <select name="escola" id="escola"
-                          ng-options="escola.name for escola in escolas track by escola.id"
-                          ng-model="usuario.school_id"></select>
+                <div class="item item-text-wrap" style="border:0;">
+                    <label class="item item-input item-floating-label">
+                        <span class="input-label">Nome completo</span>
+                        <input type="text" placeholder="Nome completo">
                     </label>
-                    <div class="row">
-                        <div class="col col-50">
-                            <button class="button button-positive btn-default" ng-click="userRegister()">CADASTRAR</button>
-                        </div>
-                        <div class="col">
-                            <button class="button btn-default transparent" ng-click="$ionicGoBack()">CANCELAR</button>
-                        </div>
+                    <label class="item item-input item-floating-label">
+                        <span class="input-label">Email</span>
+                        <input type="text" placeholder="Email">
+                    </label>
+                    <label class="item item-input item-floating-label">
+                        <span class="input-label">Data</span>
+                        <input type="date">
+                    </label>
+
+                    <label class="item item-input item-select item-floating-label">
+                        <span class="input-label">Data</span>
+                        <select>
+                            <option>Masculino</option>
+                            <option>Feminino</option>
+                        </select>
+                    </label>
+
+                    <label class="item item-input item-checkbox item-floating-label">
+                        <ion-list>
+                            <ion-checkbox ng-model="isAluno">Sou aluno</ion-checkbox>
+                        </ion-list>
+                    </label>
+
+                    <label ng-if="isAluno" class="item item-input item-select item-floating-label">
+                      <select name="escola" id="escola"
+                        ng-options="escola.name for escola in escolas track by escola.id"
+                        ng-model="usuario.school_id">
+                      </select>
+                    </label>
+                </div>
+
+
+
+                <div class="row">
+                    <div class="col col-50">
+                        <button class="button button-positive btn-default" ng-click="userRegister()">CADASTRAR</button>
+                    </div>
+                    <div class="col">
+                        <button class="button btn-default transparent" ng-click="$ionicGoBack()">CANCELAR</button>
                     </div>
                 </div>
             </div>
