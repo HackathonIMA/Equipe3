@@ -1,4 +1,30 @@
-.item-input-custom input {
-    margin: auto;
-    width: 220px;
+#main{
+    padding: 40px;
+}
+
+#main label.item {
+    border-width: 0 0 2px;
+    border-color: #ddd;
+    padding-left: 0 !important;
+    
+}
+
+#main span.input-label {
+    font-size: 14px !important;
+    color: #444 !important;
+}
+
+#main input::-webkit-input-placeholder {
+   color: #444 !important;
+}
+
+.btn-default {
+    margin-top: 30px;
+    padding: 0px 40px;
+}
+
+.btn-default.transparent {
+    padding: 0px 20px;
+    background-color: transparent;
+    color: #444;
 }
