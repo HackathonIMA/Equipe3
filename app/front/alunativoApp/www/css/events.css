@@ -7,10 +7,10 @@
 }
 
 .time-event{
-  float:right;
+  float: right;
   margin-top: 9px;
+  margin-right: 55px;
   color: grey;
-  margin-right: 82px;
 }
 
 .content-event a{
@@ -21,4 +21,8 @@
 .title-event a{
   text-decoration: none;
   color: black;
+}
+
+.col img {
+  width: 100%;
 }
