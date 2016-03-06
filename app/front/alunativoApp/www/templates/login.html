@@ -1,21 +1,21 @@
 <ion-view  hide-nav-bar="true">
     <ion-content>
         <div class="row">
-            <button ng-click="$ionicGoBack()" class="button button-icon icon icon-back-icon back-button"></button>
+            <button ng-click="$ionicGoBack()" class="button button-icon icon icon-back-icon back-button">VOLTAR</button>
         </div>
-        <!--<img src="./img/img.png" />-->
-        <div class="list">
-            <label class="item item-input item-floating-label item-input-custom">
-                <span class="input-label">Nome do Usuário</span>
-                <input type="text" placeholder="Nome do Usuário">
-            </label>
-            <label class="item item-input item-floating-label item-input-custom">
-                <span class="input-label">Senha</span>
-                <input type="password" placeholder="Senha">
-            </label>
+        <div id="main">
+            <div>
+                <label class="item item-input item-floating-label ">
+                    <span class="input-label">Nome do Usuário</span>
+                    <input type="text" placeholder="Nome do Usuário">
+                </label>
+                <label class="item item-input item-floating-label ">
+                    <span class="input-label">Senha</span>
+                    <input type="password" placeholder="Senha">
+                </label>
+            </div>
+            <button class="button button-positive btn-default" ng-click="login()">ENTRAR</button>
+            <button class="button btn-default transparent" ng-click="$ionicGoBack()">CANCELAR</button>
         </div>
-        <div class="row" >
-            <button class="button button-positive button-centered" ng-click="login()">ENTRAR</button>
-        </div>     
     </ion-content>
 </ion-view>
