@@ -8,17 +8,25 @@
   <ion-content class="padding">
 
     <div class="card">
-      <div class="item item-text-wrap item-avatar content-text-card">
-        <img ng-src="{{event.face}}">
+      <div class="item">
+        <div class="row">
+          <div class="col col-25">
+            <img ng-src="{{event.face}}">
+          </div>
 
-        <h2 class="title-event"><a href="#/tab/events/{{event.id}}">{{event.name}}</a></h2>
-        <p class="content-event"><a href="#/tab/events/{{event.id}}">{{event.lastText}}</a></p>
-        <button class="button button-small button-assertive">
-          EU APOIO
-        </button>
-        <div class="time-event">
-          <h2>{{event.date}}</h2>
+          <div class="col">
+            <h2 class="title-event"><a href="#/tab/events/{{event.id}}">{{event.name}}</a></h2>
+            <p class="content-event"><a href="#/tab/events/{{event.id}}">{{event.lastText}}</a></p>
+            <button class="button button-small button-assertive">
+              EU APOIO
+            </button>
+            <div class="time-event">
+              <h2>{{event.date}}</h2>
+            </div>
+          </div>
         </div>
+
+
       </div>
     </div>
 
@@ -34,7 +42,7 @@
       </div>
     </div>
 
-    <div class="card">
+    <div class="card card-img">
       <img ng-src="{{event.map}}">
     </div>
 
