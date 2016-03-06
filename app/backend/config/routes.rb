@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :interactions
   resources :schools, shallow: true do
     resources :shares
     resources :users, shallow: true do

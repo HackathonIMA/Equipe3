@@ -8,6 +8,7 @@ class CreateShares < ActiveRecord::Migration
       t.references :user, index: true, foreign_key: true, null: false
       t.timestamp :date
       t.string :icon
+      t.boolean :active
 
       t.timestamps null: false
     end
