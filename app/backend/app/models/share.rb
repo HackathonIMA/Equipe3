@@ -14,4 +14,9 @@ class Share < ActiveRecord::Base
   def Share.from_date(date)
     Share.active.where("created_at >= ?", date.to_time.beginning_of_day)
   end
+
+  def as_json(options = {})
+    options.merge!(:include => { interactions })
+    super({  }.merge(options || {}))
+  end
 end

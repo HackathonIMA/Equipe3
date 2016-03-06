@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+
+  resources :users do
+    member do
+       post 'support/:share_id(.:format)' => 'users#support'
+    end
+  end
+
   resources :interactions
   resources :schools, shallow: true do
     resources :shares
@@ -9,11 +16,6 @@ Rails.application.routes.draw do
   resources :shares do
     member do
        post 'report(.:format)' => 'shares#report'
-    end
-  end
-  resources :users do
-    member do
-       post 'support/:share_id(.:format)' => 'users#support'
     end
   end
 
