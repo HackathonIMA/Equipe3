@@ -16,10 +16,13 @@ angular.module('starter.controllers', [])
         $state.go('tab.events');
     };
 
+<<<<<<< HEAD
+=======
     $scope.userRegister = function () {
         $state.go('tab.userRegister');
     };
     
+>>>>>>> a23e635a03904fd722fce8273cf8db87e651715a
      $scope.logout = function () {
         $rootScope.logged = false;
         $state.go('init');
@@ -39,24 +42,23 @@ angular.module('starter.controllers', [])
   $scope.remove = function(events) {
     Events.remove(events);
   };
-  
+
    $scope.shareRegister = function() {
         $state.go('tab.share');
-    }; 
-  
+    };
+
   $scope.userRegister = function () {
         $state.go('tab.userRegister');
     };
-  
+
   $scope.share = function() {
     if ($rootScope.logged){
         $scope.shareRegister();
     } else {
         $scope.userRegister();
     }
-  }; 
-  
-  
+  };
+
 })
 
 .controller('EventDetailCtrl', function($scope, $stateParams, Events) {
