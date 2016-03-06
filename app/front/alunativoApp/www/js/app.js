@@ -42,7 +42,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         templateUrl: "templates/login.html",
         controller: 'LoginCtrl'
     })
-    
+
     .state('main', {
         url: "/main",
         templateUrl: "templates/mainFake.html",
@@ -118,6 +118,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/dash');
+  $urlRouterProvider.otherwise('/init');
 
 });

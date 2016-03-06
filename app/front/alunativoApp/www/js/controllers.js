@@ -50,6 +50,7 @@ angular.module('starter.controllers', [])
   $scope.remove = function(events) {
     Events.remove(events);
   };
+  // $scope.hit = 
 })
 
 .controller('EventDetailCtrl', function($scope, $stateParams, Events) {

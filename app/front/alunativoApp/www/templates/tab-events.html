@@ -7,7 +7,7 @@
       </div>
 
         <div class="megafone">
-          <h3>Compartilhe agora!</h3>
+          <h3>Compartilhe</h3>
           <h6>Pode acreditar...juntos somos fortes.</h6>
         </div>
      </div>
@@ -21,8 +21,8 @@
           <div class="item item-avatar">
             <img ng-src="{{event.face}}">
 
-            <h2>{{event.name}}</h2>
-            <p>{{event.lastText}}</p>
+            <h2 class="title-event"><a href="#/tab/events/{{event.id}}">{{event.name}}</a></h2>
+            <p class="content-event"><a href="#/tab/events/{{event.id}}">{{event.lastText}}</a></p>
             <button class="button button-small button-assertive">
               EU APOIO
             </button>
@@ -43,9 +43,9 @@
         <div class="item item-avatar">
           <img ng-src="{{event.face}}">
 
-          <h2>{{event.name}}</h2>
-          <p>{{event.lastText}}</p>
-          <button class="button button-small button-assertive">
+          <h2 class="title-event"><a href="#/tab/events/{{event.id}}">{{event.name}}</a></h2>
+          <p class="content-event"><a href="#/tab/events/{{event.id}}">{{event.lastText}}</a></p>
+          <button class="button button-small button-assertive" >
             EU APOIO
           </button>
           <div class="time-event">
