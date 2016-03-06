@@ -1,0 +1,63 @@
+<ion-view view-title="Eventos">
+  <ion-content class="padding">
+
+    <div class="card">
+      <div class="image-megafone">
+        <img ng-src="img/megafone.png">
+      </div>
+
+        <div class="megafone">
+          <h3>Compartilhe</h3>
+          <h6>Pode acreditar...juntos somos fortes.</h6>
+        </div>
+     </div>
+
+    <h4>Recentes</h4>
+
+    <ion-list>
+
+       <div class="list card" ng-repeat="event in events" type="item-text-wrap" href="#/tab/events/{{event.id}}">
+
+          <div class="item item-avatar">
+            <img ng-src="{{event.face}}">
+
+            <h2 class="title-event"><a href="#/tab/events/{{event.id}}">{{event.name}}</a></h2>
+            <p class="content-event"><a href="#/tab/events/{{event.id}}">{{event.lastText}}</a></p>
+            <button class="button button-small button-assertive">
+              EU APOIO
+            </button>
+            <div class="time-event">
+              <h2>{{event.date}}</h2>
+            </div>
+          </div>
+
+
+      </div>
+
+      <h4>Populares</h4>
+
+      <div class="list card" ng-repeat="event in events" type="item-text-wrap" href="#/tab/events/{{event.id}}">
+
+
+
+        <div class="item item-avatar">
+          <img ng-src="{{event.face}}">
+
+          <h2 class="title-event"><a href="#/tab/events/{{event.id}}">{{event.name}}</a></h2>
+          <p class="content-event"><a href="#/tab/events/{{event.id}}">{{event.lastText}}</a></p>
+          <button class="button button-small button-assertive" >
+            EU APOIO
+          </button>
+          <div class="time-event">
+            <h2>{{event.date}}</h2>
+          </div>
+
+        </div>
+
+         </div>
+     </div>
+    </ion-item>
+    <ion-list>
+
+  </ion-content>
+</ion-view>
