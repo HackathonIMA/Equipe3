@@ -12,7 +12,8 @@
 
 .card .item {
     padding: 0;
-    border-top: 0;    
+    width: 100%;
+    border-top: 0;
 }
 
 .row, .col {
