@@ -45,8 +45,8 @@ p.title span {
 p.title span::after{
     content: "";
     position: absolute;
-    left: -20%;
-    width: 140%;
+    left: -10%;
+    width: 120%;
     height: 20px;
     bottom: -15px;
     background: url('../img/underline.svg') no-repeat center center;
