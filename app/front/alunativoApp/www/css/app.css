@@ -18,3 +18,7 @@
 .row, .col {
     padding: 0 !important;
 }
+
+.button-centered {
+    margin: auto;
+}
