@@ -12,9 +12,19 @@
 
 .card .item {
     padding: 0;
-    border-top: 0;    
+    width: 100%;
+    border-top: 0;
 }
 
 .row, .col {
     padding: 0 !important;
+}
+
+
+.card img{
+    width: 100%;
+    padding: 0 !important;
+}
+.button-centered {
+    margin: auto;
 }
