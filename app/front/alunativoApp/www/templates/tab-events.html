@@ -1,0 +1,30 @@
+<ion-view view-title="Eventos">
+  <ion-content class="padding">
+    <ion-list>
+
+       <div class="list card" ng-repeat="event in events" type="item-text-wrap" href="#/tab/events/{{event.id}}">
+          <div class="item item-avatar">
+            <img ng-src="{{event.face}}">
+            <h2>{{event.name}}</h2>
+            <p>November 05, 1955</p>
+          </div>
+
+          <div class="item item-body">
+            <img class="full-image" src="delorean.jpg">
+            <p>
+              <p>{{event.lastText}}</p>
+            </p>
+
+            <p>
+              <a href="#" class="subdued">3 Apoios</a>
+              <a href="#" class="subdued">5 Comentários</a>
+              <a href="#/tab/events/{{event.id}}">DETALHE</a>
+            </p>
+
+          </div>
+      </div>
+    </ion-item>
+    <ion-list>
+
+  </ion-content>
+</ion-view>

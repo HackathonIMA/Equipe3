@@ -47,4 +47,60 @@ angular.module('starter.services', [])
       return null;
     }
   };
+})
+
+
+.factory('Events', function() {
+  // Might use a resource here that returns a JSON array
+
+  // Some fake testing data
+  var events = [{
+    id: 0,
+    name: 'Ben Sparrow',
+    lastText: 'Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings,   Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga.',
+    date: '',
+    face: 'img/ben.png'
+  }, {
+    id: 1,
+    name: 'Max Lynx',
+    lastText: 'Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings,   Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga.',
+    date: '',
+    face: 'img/max.png'
+  }, {
+    id: 2,
+    name: 'Adam Bradleyson',
+    lastText: 'Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings,   Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga.',
+    date: '',
+    face: 'img/adam.jpg'
+  }, {
+    id: 3,
+    name: 'Perry Governor',
+    lastText: 'Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings,   Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga.',
+    date: '',
+    face: 'img/perry.png'
+  }, {
+    id: 4,
+    name: 'Mike Harrington',
+    lastText: 'Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings,   Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga.',
+    date: '',
+    face: 'img/mike.png'
+  }];
+
+  return {
+    all: function() {
+      return events;
+    },
+    remove: function(event) {
+      events.splice(events.indexOf(event), 1);
+    },
+    get: function(eventId) {
+      for (var i = 0; i < events.length; i++) {
+        if (events[i].id === parseInt(eventId)) {
+          return events[i];
+        }
+      }
+      return null;
+    }
+  };
+
 });
