@@ -1,6 +1,6 @@
 /* @1x Images (Pixel Ratio 1.0) */
 [background-image|="image-1"] {
-    background: url('../img/init-background.png');
+    background: url('../img/background.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -9,7 +9,7 @@
 /* @2x Images (Pixel Ratio of 1.25+) */
 @media only screen and (-o-min-device-pixel-ratio: 5/4), only screen and (-webkit-min-device-pixel-ratio: 1.25), only screen and (min--moz-device-pixel-ratio: 1.25), only screen and (min-device-pixel-ratio: 1.25), only screen and (min-resolution: 1.25dppx) {
     [background-image|="image-1"] {
-        background: url('../img/init-background.png');
+        background: url('../img/background.png');
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
@@ -19,7 +19,7 @@
 /* @3x Images (Pixel Ratio of 2.25+) */
 @media only screen and (-o-min-device-pixel-ratio: 9/4), only screen and (-webkit-min-device-pixel-ratio: 2.25), only screen and (min-device-pixel-ratio: 2.25), only screen and (min-resolution: 2.25dppx) {
     [background-image|="image-1"] {
-        background: url('../img/init-background.png');
+        background: url('../img/background.png');
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
@@ -28,5 +28,49 @@
 
 p {
     color: white;
-    font-size: 36p;x
+    font-size: 36px;
+    width: 100%;
+}
+
+p.title {
+    line-height: 120%;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+p.title span {
+    color: #D2CCA6;
+}
+
+#footer-gradient {
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 60px;
+    height: 60%;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,1));
+}
+
+#footer-content {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.btn-conhecer {
+    width: 200px;
+    line-height: 50px;
+    font-size: 18px;
+    font-weight: 600;
+    background-color: #C85A28 !important;
+}
+
+.btn-entrar {
+    width: 200px;
+    line-height: 50px;
+    margin-top: 15px;
+    background-color: transparent !important;
+    color: #ddd !important;
+    margin-bottom: 25px;
 }
