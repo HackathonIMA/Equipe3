@@ -68,3 +68,7 @@
 .item.item-input.item-select.item-floating-label { border-bottom:2px solid #DDD; }
 
 button.btn-default.transparent {  }
+
+ion-header-bar { 
+    height:60px !important;
+}
