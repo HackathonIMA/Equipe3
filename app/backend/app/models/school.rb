@@ -2,6 +2,7 @@ class School < ActiveRecord::Base
   before_save :update_from_ima
 
   has_many :shares
+  has_many :users
 
   def School.from_ima(offset = 0, limit = 20, filters = {}, fields = {})
       ima = ImaApi.new('O4FK6qtxiu4m')

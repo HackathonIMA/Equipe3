@@ -1,6 +1,8 @@
-<ion-view view-title="Eventos">
-  <ion-content class="padding">
-
+<ion-view view-title="Falaê">
+    <ion-nav-buttons side="left">
+         <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+    </ion-nav-buttons>
+  <ion-content class="padding has-header events-background">
     <div class="card">
       <div class="row">
         <div class="image-megafone col col-25" >
@@ -28,7 +30,7 @@
               <div class="col">
                 <h2 class="title-event"><a href="#/tab/events/{{event.id}}">{{event.name}}</a></h2>
                 <p>{{event.lastText}}</p>
-                <button class="button button-small button-assertive" ng-click="count = count + 1" ng-init="count=3">
+                <button class="button button-small button-assertive" ng-click="share()" ng-init="count=3">
                   EU APOIO {{count}}
                 </button>
 
