@@ -19,19 +19,19 @@ begin
                         {
                           name: 'Chiquinha',
                           email: 'chiquinha@vila.com.mx',
-                          birthday: Date.new(1990, 02, 5),
+                          birthday: Date.new(1990, 2, 5),
                           address: 'Apartamento 42'
                         },
                         {
                           name: 'Seu Madruga',
                           email: 'seu.madruga@vila.com.mx',
-                          birthday: Date.new(1970, 08, 27),
+                          birthday: Date.new(1970, 8, 27),
                           address: 'Apartamento 42'
                         },
                         {
                           name: 'Professor Girafales',
                           email: 'prof.girafales@escola.com.mx',
-                          birthday: Date.new(1968, 08, 27)
+                          birthday: Date.new(1968, 8, 27)
                         }
                       ])
 rescue
