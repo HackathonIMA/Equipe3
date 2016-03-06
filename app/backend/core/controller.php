@@ -2,7 +2,7 @@
 
 class Controller
 {
-	
+
 	public $body_class_name = null;
 	public $class_name 		= null;
 	public $urla_class_name = null;
@@ -13,7 +13,7 @@ class Controller
 	{
 		$class_name = get_class($this);
 		$class_name = str_replace('Controller', '', $class_name);
-		
+
 		$this->class_name      = $class_name;
 		$this->urla_class_name = strtolower($class_name);
 	}
@@ -29,12 +29,12 @@ class Controller
 	public function model($model)
 	{
 		$required_file = '_model/'.$model.'.php';
-		
+
 		if (!file_exists($required_file))
 		{
 			echo 'MODEL: "'.$required_file.'" n&atilde;o encontrado!';
 		}
-		
+
 		require_once $required_file;
 		return new $model();
 	}
@@ -55,7 +55,7 @@ class Controller
 
 	public function view($view, $data = array())
 	{
-		// self 
+		// self
 		$this->body_class_name = str_replace('/', '-', $view);
 		$this->data = $data;
 
@@ -73,11 +73,11 @@ class Controller
 
 	public function Security()
 	{
-		if ($_SESSION['yc_logged'] != true)
-		{
-			header('Location: /signin');
-			exit;
-		}
+		// if ($_SESSION['yc_logged'] != true)
+		// {
+		// 	header('Location: /signin');
+		// 	exit;
+		// }
 	}
 
 
@@ -85,13 +85,13 @@ class Controller
 	/* RESTful
 	-------------------------------------------------------------------------------------*/
 
-	// TODO: 
+	// TODO:
 	// 		The class that extendes must be implement Security ad more...
 	// 		move rest methods to another class file. And create a readme file. (WILL)
 
 
 	// POST
-	protected function rest_create()
+	public function rest_create()
 	{
 		// $this->Security();
 
@@ -103,10 +103,10 @@ class Controller
 
 
 	// DELETE
-	protected function rest_delete($id)
+	public function rest_delete($id)
 	{
 		$this->Security();
-		
+
 		$obj 		= $this->model($this->class_name);
 		$output 	= $obj->delete($obj->properties[0], $id);
 
@@ -115,10 +115,10 @@ class Controller
 
 
 	// GET
-	protected function rest_select($params = array())
+	public function rest_select($params = array())
 	{
 		$this->Security();
-		
+
 		$query 	= null;
 		$order 	= null;
 		$obj 	= $this->model($this->class_name);
@@ -151,22 +151,22 @@ class Controller
 
 
 	// PUT
-	protected function rest_update($id)
+	public function rest_update($id)
 	{
 		$this->Security();
-		
+
 		// MAYBE: Can be work across POST, if primary_key isset.
-		
+
 		// instance
 		$obj = $this->model($this->class_name);
-		
+
 		// data
 		parse_str(file_get_contents("php://input"), $data);
 		$data[$obj->properties[0]] = $id;
-		
+
 		// output
 		$output = $obj->update($data);
-		
+
 		return $output;
 	}
 
