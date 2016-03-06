@@ -6,9 +6,44 @@
 -->
 <ion-view view-title="{{event.name}}">
   <ion-content class="padding">
-    <img ng-src="{{event.face}}" style="width: 64px; height: 64px">
-    <p>
-      {{event.lastText}}
-    </p>
-  </ion-content>
+
+    <div class="card">
+      <div class="item">
+        <div class="row">
+          <div class="col col-25">
+            <img ng-src="{{event.face}}">
+          </div>
+
+          <div class="col">
+            <h2 class="title-event"><a href="#/tab/events/{{event.id}}">{{event.name}}</a></h2>
+            <p class="content-event"><a href="#/tab/events/{{event.id}}">{{event.lastText}}</a></p>
+            <button class="button button-small button-assertive">
+              EU APOIO
+            </button>
+            <div class="time-event">
+              <h2>{{event.date}}</h2>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="item item-avatar">
+        <h3>{{event.name}}</h3>
+
+        <hr>
+
+        <h2>This is a basic</h2>
+        <p>{{event.contentText}}</p>
+
+      </div>
+    </div>
+
+    <div class="card card-img">
+      <img ng-src="{{event.map}}">
+    </div>
+
 </ion-view>
