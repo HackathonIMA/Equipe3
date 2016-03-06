@@ -56,34 +56,10 @@ angular.module('starter.services', [])
   // Some fake testing data
   var events = [{
     id: 0,
-    name: 'Ben Sparrow',
-    lastText: 'Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings,   Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga.',
-    date: '',
-    face: 'img/ben.png'
-  }, {
-    id: 1,
-    name: 'Max Lynx',
-    lastText: 'Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings,   Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga.',
-    date: '',
-    face: 'img/max.png'
-  }, {
-    id: 2,
-    name: 'Adam Bradleyson',
-    lastText: 'Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings,   Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga.',
-    date: '',
-    face: 'img/adam.jpg'
-  }, {
-    id: 3,
-    name: 'Perry Governor',
-    lastText: 'Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings,   Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga.',
-    date: '',
-    face: 'img/perry.png'
-  }, {
-    id: 4,
-    name: 'Mike Harrington',
-    lastText: 'Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings,   Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga.',
-    date: '',
-    face: 'img/mike.png'
+    name: 'Mussum ipsum cacilds, vidis litro abertis.',
+    lastText: 'EE Escola Municipal Tim Bernners Lee',
+    date: '3 segundos',
+    face: 'img/tool.png'
   }];
 
   return {
