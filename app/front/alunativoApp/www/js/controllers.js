@@ -2,7 +2,7 @@ angular.module('starter.controllers', [])
 
 .controller('InitCtrl', function($scope, $state) {
     $scope.comecar = function () {
-        $state.go('main');
+        $state.go('tab.events');
     };
 
     $scope.login = function () {
@@ -12,7 +12,7 @@ angular.module('starter.controllers', [])
 
 .controller('LoginCtrl', function($scope, $state) {
     $scope.login = function () {
-        $state.go('main');
+        $state.go('tab.events');
     };
 })
 
