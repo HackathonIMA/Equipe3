@@ -38,8 +38,8 @@ rescue
   puts "Error saving users... continuing"
 end
 
+e_length = 50
 if School.all.length <= e_length
-  e_length = 50
   ima = ImaApi.new('O4FK6qtxiu4m')
   ima_escolas = ima.escolas(0, e_length)
   e_length.times do |i|
