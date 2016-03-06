@@ -56,7 +56,7 @@ angular.module('starter.services', [])
   // Some fake testing data
   var events = [{
     id: 0,
-    name: 'Mussum ipsum',
+    name: 'Mussum ipsum cacilds',
     lastText: 'EE Escola Municipal Tim Bernners Lee',
     contentText: 'Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo.',
     date: '3 segundos',

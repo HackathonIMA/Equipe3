@@ -15,7 +15,7 @@ angular.module('starter.controllers', [])
         $rootScope.logged = true;
         $state.go('tab.events');
     };
-    
+
      $scope.logout = function () {
         $rootScope.logged = false;
         $state.go('init');
@@ -56,7 +56,7 @@ angular.module('starter.controllers', [])
   $scope.remove = function(events) {
     Events.remove(events);
   };
-  // $scope.hit = 
+  // $scope.hit =
 })
 
 .controller('EventDetailCtrl', function($scope, $stateParams, Events) {
