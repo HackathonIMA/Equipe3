@@ -31,7 +31,7 @@
 
                 <div class="col">
                   <h2 class="title-event"><a href="#/tab/events/{{event.id}}">{{event.name}}</a></h2>
-                  <p>{{event.lastText}}</p>
+                  <p>{{event.school.name}}</p>
                   <button class="button button-small button-assertive" ng-click="count = count + 1" ng-init="count=3">
                     EU APOIO {{count}}
                   </button>
@@ -59,11 +59,11 @@
             <div class="col-content">
               <div class="col">
                 <h2 class="title-event"><a href="#/tab/events/{{event.id}}">{{event.name}}</a></h2>
-                <p>{{event.lastText}}</p>
+                <p>{{event.school.name}}</p>
                 <button class="button button-small button-balanced" ng-click="count = count + 1; apoiado = true;" ng-init="count=3">
                   EU APOIO {{count}}
                 </button>
-            
+
                 <div class="time-event">
                   <h2>{{event.date}}</h2>
                 </div>
