@@ -1,7 +1,20 @@
 .card {
-    padding: 15px;
+    margin: 15px;
+    padding: 35px;
+    width: 100%;
 }
 
-.button-centered  {
-    margin: auto;
+.card h1 {
+    font-weight: 300;
+    font-size: 27px;
+    color: #36B;
+}
+
+.card .item {
+    padding: 0;
+    border-top: 0;    
+}
+
+.row, .col {
+    padding: 0 !important;
 }
