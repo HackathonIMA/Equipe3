@@ -1,5 +1,5 @@
 class SharesController < ApplicationController
-  before_action :set_share, only: [:show, :edit, :update, :destroy]
+  before_action :set_share, only: [:show, :edit, :update, :destroy, :report]
 
   # GET /shares
   # GET /shares.json
@@ -7,7 +7,7 @@ class SharesController < ApplicationController
     if params[:creation_date].present?
       @shares = Share.from_date Date.parse params[:creation_date]
     else
-      @shares = Share.all
+      @shares = Share.active
     end
 
     @shares = @shares.where(user_id: params[:user_id].to_i) if params[:user_id].present?
@@ -69,10 +69,24 @@ class SharesController < ApplicationController
     end
   end
 
+  def report
+    @share.active = false
+
+    respond_to do |format|
+      if @share.save
+        format.html { redirect_to @share, notice: 'Share was successfully reported.' }
+        format.json { render :show, status: :created, location: @share }
+      else
+        format.html { render :new }
+        format.json { render json: @share.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_share
-      @share = Share.find(params[:id])
+      @share = Share.active.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

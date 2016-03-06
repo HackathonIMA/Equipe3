@@ -8,20 +8,24 @@
 
 # TODO: load the schools!
 
-users = User.create([
-                      {
-                        name: 'Chaves',
-                        email: 'chaves@vila.com.mx',
-                        birthday: Time.new(1988, 12, 15),
-                        address: 'No Barril'
-                      },
-                      {
-                        name: 'Chiquinha',
-                        email: 'chiquinha@vila.com.mx',
-                        birthday: Date.new(1990, 12, 15),
-                        address: 'Apartamento 42'
-                      }
-                    ])
+begin
+  users = User.create([
+                        {
+                          name: 'Chaves',
+                          email: 'chaves@vila.com.mx',
+                          birthday: Time.new(1988, 12, 15),
+                          address: 'No Barril'
+                        },
+                        {
+                          name: 'Chiquinha',
+                          email: 'chiquinha@vila.com.mx',
+                          birthday: Date.new(1990, 12, 15),
+                          address: 'Apartamento 42'
+                        }
+                      ])
+rescue
+  puts "Error saving users... continuing"
+end
 
 # ima = ImaApi.new('O4FK6qtxiu4m')
 # i = 0
