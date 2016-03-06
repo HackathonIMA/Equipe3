@@ -98,7 +98,7 @@ class SharesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_share
-      @share = Share.active.find(params[:id]) unless params[:id].is_a? String
+      @share = Share.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

@@ -32,17 +32,14 @@ angular.module('starter.controllers', [])
   // To listen for when this page is active (for example, to refresh data),
   // listen for the $ionicView.enter event:
   //
-  //$scope.$on('$ionicView.enter', function(e) {
-  //});
+  $scope.$on('$ionicView.enter', function(e) {
+      Events.all().success(function(data) {
+        $scope.eventsRecentes = data;
+      });
 
-  Events.all().success(function(data) {
-    $scope.eventsRecentes = data;
-    console.log(data);
-  });
-
-  Events.popular().success(function(data) {
-
-    $scope.eventsPopulares = data;
+      Events.popular().success(function(data) {
+        $scope.eventsPopulares = data;
+      });
   });
 
   $scope.remove = function(events) {
@@ -72,7 +69,13 @@ angular.module('starter.controllers', [])
   });
 })
 
-.controller('UserRegisterCtrl', function($rootScope, $scope, $state) {
+.controller('UserRegisterCtrl', function($rootScope, $scope, $state, Escolas) {
+  $scope.$on('$ionicView.enter', function(e) {
+    Escolas.all().success(function(data) {
+      $scope.escolas = data;
+    })
+});;
+
   $scope.userRegister = function() {
     $rootScope.logged = true;
     $state.go('tab.events');

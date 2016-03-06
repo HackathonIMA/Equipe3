@@ -38,13 +38,13 @@ rescue
   puts "Error saving users... continuing"
 end
 
-e_length = 50
-ima = ImaApi.new('O4FK6qtxiu4m')
-ima_escolas = ima.escolas(0, e_length)
-e_length.times do |i|
-  School.create([{
-                  ima_id: ima_escolas[i]['id']
-                }])
+if School.all.length <= e_length
+  e_length = 50
+  ima = ImaApi.new('O4FK6qtxiu4m')
+  ima_escolas = ima.escolas(0, e_length)
+  e_length.times do |i|
+    School.create([{ima_id: ima_escolas[i]['id']}])
+  end
 end
 
 begin
@@ -54,13 +54,13 @@ begin
     category: 1,
     school_id: 5,
     user_id: users[0].id
-    },{
-      title: "Reunião de pais e mestres",
-      description: "Na próxima semana teremos a reunião de pais.",
-      category: 2,
-      school_id: 7,
-      user_id: users[3].id
-      }])
+  }, {
+    title: "Reunião de pais e mestres",
+    description: "Na próxima semana teremos a reunião de pais.",
+    category: 2,
+    school_id: 7,
+    user_id: users[3].id
+  }])
 rescue
   puts "Error saving events... continuing"
 end

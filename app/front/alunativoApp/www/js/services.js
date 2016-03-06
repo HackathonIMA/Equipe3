@@ -52,11 +52,16 @@ angular
 })
 
 .factory('Escolas', function(API_URL, $http) {
+
+  function $get(url) {
+    return $http({
+      url: API_URL + url
+    });
+  }
+
   return {
     all: function() {
-      return $http.get({
-        url: API_URL + "/schools.json"
-      });
+      return $get("/schools.json");
     }
   }
 })
