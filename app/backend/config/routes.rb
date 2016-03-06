@@ -1,7 +1,14 @@
 Rails.application.routes.draw do
-  resources :schools
-  resources :shares
-  resources :users
+  resources :schools, shallow: true do
+    resources :shares
+    resources :users do
+      resources :shares
+    end
+  end
+  # resources :shares
+
+  #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
