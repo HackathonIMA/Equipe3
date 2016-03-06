@@ -2,42 +2,48 @@
 		<ion-nav-buttons side="left">
 				 <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
 		</ion-nav-buttons>
-	<ion-content class="padding has-header events-background">
+	<ion-content class="padding has-header events-background" style="padding:25px 15px 0;">
 		<div class="card no-padding card-compatilhe">
 			<div class="row">
 				<div class="col-left image-megafone col col-25" >
-					<img src="../img/megaphone.png" alt="">
+					<img src="../img/megaphone.png" alt="" style="width:90%;">
 				</div>
-				<div class="col-content">
-					<div class="megafone col">
+				<div class="col-content col col-75">
+					<div class="megafone">
 						<h3>Compartilhe</h3>
 						<h6>Juntos somos fortes.</h6>
+						<div class="ico-go"></div>
 					</div>
 				</div>
 			</div>
 		 </div>
 
-		<h4 ng-show="eventsRecentes.length">Recentes</h4>
+		<h4 ng-show="eventsRecentes.length" style="padding-top:10px;">Recentes</h4>
 
 		<ion-list>
 
 			 <div class="list card no-padding" ng-repeat="event in eventsRecentes" type="item-text-wrap" href="#/tab/events/{{event.id}}">
 					<div class="item">
 						<div class="row">
-							<div class="col-left col col-25">
-								<div class="figure {{event.category}}"></div>
+							<div class="col-left col col-25 {{event.category}}">
+								<div class="figure"></div>
 							</div>
 
-							<div class="col-content">
+							<div class="col-content col-75">
 								<div class="col">
 									<h2 class="title-event"><a href="#/tab/events/{{event.id}}">{{event.name}}</a></h2>
 									<p>{{event.lastText}}</p>
-									<button class="button button-small button-assertive" ng-click="share()" ng-init="count=3">
-										EU APOIO {{count}}
-									</button>
 
-									<div class="time-event">
-										<h2>{{event.date}}</h2>
+									<div class="row">
+										<div class="col col-50">
+											<button class="button button-clear button-assertive" ng-click="share()" ng-init="count=3">
+												EU APOIO {{count}}
+											</button>
+										</div>
+
+										<div class="time-event col">
+											{{event.date}}
+										</div>
 									</div>
 								</div>
 							</div>
@@ -51,21 +57,26 @@
 			<div class="list card no-padding" ng-repeat="event in eventsPopulares" type="item-text-wrap" href="#/tab/events/{{event.id}}">
 				 <div class="item">
 					 <div class="row">
-						 <div class="col-left col col-25">
-							<div class="figure {{event.category}}"></div>
+						 <div class="col-left col col-25 {{event.category}}">
+							<div class="figure"></div>
 						 </div>
 
 
-						<div class="col-content">
+						<div class="col-content col-75">
 							<div class="col">
 								<h2 class="title-event"><a href="#/tab/events/{{event.id}}">{{event.name}}</a></h2>
 								<p>{{event.lastText}}</p>
-								<button class="button button-small button-assertive" ng-click="count = count + 1" ng-init="count=3">
-									EU APOIO {{count}}
-								</button>
 
-								<div class="time-event">
-									<h2>{{event.date}}</h2>
+								<div class="row">
+									<div class="col col-50">
+										<button class="button button-clear button-assertive" ng-click="count = count + 1" ng-init="count=3">
+											EU APOIO {{count}}
+										</button>
+									</div>
+
+									<div class="time-event col">
+										{{event.date}}
+									</div>
 								</div>
 							</div>
 

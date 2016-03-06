@@ -71,4 +71,20 @@ button.btn-default.transparent {  }
 
 ion-header-bar { 
     height:60px !important;
+    background-color:#C85A28 !important;
+    border-bottom:1px solid #FFF;
+}
+
+ion-side-menu ion-item {
+    border-width:0 0 1px !important;
+    margin:0 !important;
+    bottom:1px !important;
+    border-bottom:1px solid #DDD;
+}
+
+ion-side-menu ion-item:last-child {
+    border-width:0 0 1px !important;
+    margin:0 !important;
+    bottom:1px !important;
+    border-bottom:0;
 }

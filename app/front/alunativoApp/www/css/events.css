@@ -3,14 +3,24 @@
 }
 .megafone {
   float: right;
-  width: 250px;
+  position:relative;
+  padding-left:15px;
+  width: 100%;
+}
+.megafone .ico-go {
+  position:absolute;
+  top:20%;
+  right:0px;
+  width:25px;
+  height:46px;
+  background:url('../img/ico-go.png') no-repeat center center;
 }
 
 .time-event{
-  float: right;
-  margin-top: 9px;
-  margin-right: 55px;
-  color: grey;
+  text-indent:15px;
+  line-height:50px;
+  font-size:14px;
+  color:#AAA;
 }
 
 .content-event a{
@@ -75,18 +85,28 @@
   background:url('../img/icons.png') no-repeat 0 0;
 }
 
-.events-background .row .col-left .figure.praise::after {
-  background-position:0 0;
-}
-.events-background .row .col-left .figure.praise::after {
-  background-position:0 -80px;
-}
+.events-background .row .col-left.praise                { background-color:#3366BB; background-position:0 0; }
+.events-background .row .col-left.praise .figure::after { background-position:0 0; }
+.events-background .row .col-left.tool                  { background-color:#008C00; background-position:0 -80px; }
+.events-background .row .col-left.tool .figure::after   { background-position:0 -80px; }
 
 
 .card-compatilhe {
   padding:21px;
   color:#FFF;
   background:#C85A28;
+}
+
+.card-compatilhe h3 {
+  font-size:27px;
+  font-weight:300;
+  color:inherit;
+}
+.card-compatilhe h6 {
+  opacity: 0.5;
+  font-size:16px;
+  font-weight:300;
+  color:inherit;
 }
 .card-compatilhe img {
   width:100%;

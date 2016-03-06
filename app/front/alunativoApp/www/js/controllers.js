@@ -34,7 +34,7 @@ angular.module('starter.controllers', [])
   //
   $scope.$on('$ionicView.enter', function(e) {
       Events.all().success(function(data) {
-        $scope.eventsRecentes = data;
+        $scope.eventsRecentes = data.splice(0,1);
       });
 
       Events.popular().success(function(data) {
