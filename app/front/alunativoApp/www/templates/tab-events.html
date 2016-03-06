@@ -22,10 +22,11 @@
             <img ng-src="{{event.face}}">
 
             <h2 class="title-event"><a href="#/tab/events/{{event.id}}">{{event.name}}</a></h2>
-            <p class="content-event"><a href="#/tab/events/{{event.id}}">{{event.lastText}}</a></p>
-            <button class="button button-small button-assertive">
-              EU APOIO
+            <p>{{event.lastText}}</p>
+            <button class="button button-small button-assertive" ng-click="count = count + 1" ng-init="count=3">
+              EU APOIO {{count}}
             </button>
+
             <div class="time-event">
               <h2>{{event.date}}</h2>
             </div>
@@ -45,8 +46,8 @@
 
           <h2 class="title-event"><a href="#/tab/events/{{event.id}}">{{event.name}}</a></h2>
           <p class="content-event"><a href="#/tab/events/{{event.id}}">{{event.lastText}}</a></p>
-          <button class="button button-small button-assertive" >
-            EU APOIO
+          <button class="button button-small button-assertive" ng-click="count = count + 1" ng-init="count=6">
+            EU APOIO {{count}}
           </button>
           <div class="time-event">
             <h2>{{event.date}}</h2>
