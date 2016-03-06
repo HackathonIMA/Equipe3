@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160305232224) do
+ActiveRecord::Schema.define(version: 20160306003731) do
 
   create_table "schools", force: :cascade do |t|
     t.string   "ima_id"
@@ -22,22 +22,24 @@ ActiveRecord::Schema.define(version: 20160305232224) do
   end
 
   create_table "shares", force: :cascade do |t|
-    t.string   "title"
+    t.string   "title",       null: false
     t.string   "description"
-    t.integer  "category"
+    t.integer  "category",    null: false
     t.integer  "school_id"
     t.datetime "date"
     t.string   "icon"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "user_id"
   end
 
   add_index "shares", ["school_id"], name: "index_shares_on_school_id"
+  add_index "shares", ["user_id"], name: "index_shares_on_user_id"
 
   create_table "users", force: :cascade do |t|
-    t.string   "name"
-    t.string   "email"
-    t.date     "birthday"
+    t.string   "name",       null: false
+    t.string   "email",      null: false
+    t.date     "birthday",   null: false
     t.string   "address"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

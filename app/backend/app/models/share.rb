@@ -1,5 +1,7 @@
 class Share < ActiveRecord::Base
-  has_one :school
+  belongs_to :school
+  belongs_to :user
+
   enum category: {
     complain: 0,  # reclamação
     praise: 1,    # elogio
